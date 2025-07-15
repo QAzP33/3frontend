@@ -1,0 +1,28 @@
+/*====================================================
+settings
+====================================================*/
+* {
+  box-sizing: border-box;
+  word-break: break-word;
+}
+html {
+  font-size: 62.5%;
+  -moz-text-size-adjust: 100%;
+       text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+// 預設字體
+body {
+  font-family:'GenRyuMin2', 'Noto Sans TC', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+img {
+  vertical-align: bottom;
+  max-width: 100%;
+  height: auto;
+  -ms-interpolation-mode: auto;
+}

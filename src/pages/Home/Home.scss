@@ -1,0 +1,150 @@
+.banner-container {
+  position: relative; 
+}
+
+
+.cardTitle h1{
+ 
+  font-size: 48px; 
+  padding-top: 100px;
+  padding-bottom: 24px;
+  color: #533A24;
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+  }
+}
+  
+
+.cardEngTitle{
+  font-size: 24px;
+  padding-bottom: 80px;
+  padding-top: 24px;
+  color: #533A24 ;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+
+.cardLine{
+  width: 520px;
+  height: 1px;
+  background-color: #9C846F;
+
+  @media (max-width: 768px) {
+    width: 320px;
+  }
+}
+
+.bestSellerSection{
+  padding-bottom: 100px;
+}
+
+.bestSellerCardList{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 40px;
+  grid-row-gap: 80px;
+  margin-top: 80px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr ;
+  }
+
+
+}
+
+.equipmentSection{
+  padding-bottom: 100px;
+}
+
+
+.equipmentCardList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 80px;
+  grid-row-gap: 80px;
+
+  @media (max-width: 992px) {
+    display: none;
+  }
+
+}
+
+// 其他用具商品橫向滑動
+.equipmentCard-scroll {
+  overflow-x: auto;
+  display: none;
+  flex-wrap: nowrap;
+  scroll-snap-type: x mandatory; 
+  -webkit-overflow-scrolling: touch;
+  gap:32px;
+
+
+  @media (max-width: 992px) {
+    display: flex;
+    
+  }
+}
+
+// 每個卡片在手機版下的樣式
+.equipmentCard-mobile {
+  flex: 0 0 auto;        
+  width: 271px;    
+  height: 640px;        
+  scroll-snap-align: start;
+}
+
+
+.moreBtn{
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  font-size: 20px;
+  margin-top: 120px;
+ 
+}
+
+.certificationTitle h1{
+  font-size: 48px;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  color: #533A24;
+
+  @media (max-width: 992px) {
+    padding-left: 12px;
+    padding-right: 12px;
+    text-align: justify;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+    padding-left: 12px;
+    padding-right: 12px;
+    text-align: justify;
+  }
+  
+}
+
+.certificationSection{
+  padding-bottom: 100px;
+}
+
+.desk-certification{
+  gap:64px;
+  justify-content: center;
+
+  @media (max-width: 1200px) {
+   justify-content: flex-start;
+   align-items: center;
+   overflow-y: scroll;
+    gap:60px;
+  }
+}
+
+.desk-certificationLogo{
+  min-width:120px;
+}

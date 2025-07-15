@@ -1,0 +1,67 @@
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    .logo-icon {
+      width: 27.73px;
+      height: auto;
+      gap: 8px;
+    }
+    .logo-text {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: $coffee-primary-000;
+    }
+  }
+  
+  .footer-container-custom {
+    max-width: 1296px;
+    margin: 0 auto;
+    padding: 64px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px; 
+  }
+  
+  .footer-top {
+    gap: 12px;
+  
+    &-link {
+      padding: 8px 16px;
+      text-decoration: none;
+      color: $coffee-primary-000;
+    }
+  }
+  
+  .footer-info {
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: left;
+    }
+  
+    &-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+    }
+  
+  }
+  
+  
+  .footer-media {
+    align-self: flex-start;
+  
+    @media (min-width: 768px) {
+      align-self: flex-start;
+    }
+  }
+  
+  .footer-media-item {
+    font-size: 3.2rem;
+    gap: 32px;
+  
+  }
+  
+  

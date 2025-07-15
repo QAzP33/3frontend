@@ -1,0 +1,520 @@
+.create-custom {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    gap: 80px;
+  }
+
+  .create-banner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+  }
+
+  .create-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 16px;
+
+    @media (min-width: 768px) {
+      max-width: 1240px;
+      margin: 0 auto;
+      gap: 80px;
+      padding: 0;
+    }
+
+    .create-title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+
+      &-chinese {
+        font-size: 3rem;
+        color: $coffee-primary-800;
+        font-weight: 900;
+        line-height: 120%;
+
+        @media (min-width: 768px) {
+          font-size: 4.8rem;
+        }
+      }
+
+      &-line {
+        width: 100%;
+        max-width: 351px;
+        height: 1px;
+        background-color: $coffee-primary-500;
+        margin: 0 auto;
+
+        @media (min-width: 768px) {
+          max-width: 520px;
+        }
+      }
+
+      &-english {
+        font-size: 2rem;
+        color: $coffee-primary-800;
+        font-weight: 900;
+        line-height: 120%;
+
+        @media (min-width: 768px) {
+          font-size: 2.4rem;
+        }
+      }
+    }
+  }
+}
+
+.content-style-create {
+  .orders-custom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+
+    .content-title {
+      font-size: 2.4rem;
+      color: $coffee-primary-600;
+      font-weight: 600;
+    }
+
+    .orders-custom {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+
+      // 手機版
+      &-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+
+        .order-card {
+          width: 100%;
+          box-sizing: border-box;
+          background-color: $coffee-grey-000;
+          border: 1px solid $coffee-primary-100;
+          border-top: none;
+          padding: 24px;
+          font-size: 1.6rem;
+          line-height: 1.5;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+
+          &:first-child {
+            border-top: 1px solid $coffee-primary-100;
+          }
+
+          &-content {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            .date-num {
+              display: flex;
+              justify-content: space-between;
+
+              &-style {
+                color: $coffee-primary-600;
+              }
+            }
+
+            .text-group {
+              display: flex;
+              gap: 8px;
+
+              &-title {
+                color: $coffee-primary-1000;
+                width: 65px;
+              }
+
+              &-text {
+                color: $coffee-primary-600;
+                flex: 1;
+
+                @media (min-width: 768px) {
+                  font-weight: 700;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // 桌機版
+      &-table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        background-color: $coffee-grey-000;
+      }
+
+      &-style {
+        position: sticky;
+        top: 0;
+        background-color: $coffee-grey-000;
+        z-index: 1;
+
+        &-th {
+          padding: 24px 40px;
+          color: $coffee-primary-1000;
+          background-color: #f7f7f7;
+          font-weight: 700;
+          text-align: left;
+          vertical-align: middle;
+          // border-bottom: 1px solid $coffee-primary-100;
+        }
+      }
+
+      &-tbody {
+        background-color: $coffee-grey-000;
+
+        tr:last-child th,
+        tr:last-child td {
+          border-bottom: none;
+        }
+
+        &-th,
+        &-td {
+          padding: 24px 40px;
+          color: $coffee-primary-700;
+          border-bottom: 1px solid $coffee-primary-100;
+          vertical-align: middle;
+        }
+
+        &-unpaid,
+        &-unshipped {
+          padding: 16px;
+          color: $coffee-notification;
+        }
+
+        .price-box {
+          display: flex;
+          flex-direction: row;
+          gap: 4px;
+        }
+
+        .check {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          max-width: 330px;
+          height: 100%;
+          overflow: hidden;
+
+          &-text {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-shrink: 1;
+          }
+
+          &-btn {
+            &-view,
+            &-reorder,
+            &-checkout {
+              font-size: 1.4rem;
+              padding: 4px 8px;
+            }
+
+            &-view {
+              color: $coffee-primary-000;
+              background-color: $coffee-primary-700;
+
+              &:hover {
+                background-color: $coffee-primary-300;
+                color: $coffee-primary-700;
+              }
+
+              &:active {
+                background-color: $coffee-primary-800;
+                color: $coffee-primary-000;
+              }
+            }
+
+            &-reorder {
+              color: $coffee-primary-500;
+              background-color: $coffee-primary-100;
+
+              &:hover {
+                background-color: $coffee-primary-000;
+                color: $coffee-primary-600;
+              }
+
+              &:active {
+                color: $coffee-primary-000;
+              }
+            }
+
+            &-checkout {
+              color: $coffee-primary-100;
+              background-color: $coffee-primary-500;
+
+              &:hover {
+                background-color: $coffee-primary-100;
+                color: $coffee-primary-700;
+              }
+
+              &:active {
+                background-color: $coffee-primary-800;
+                color: $coffee-primary-000;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 單一訂單資訊
+    .order-summary-header {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      @media (min-width: 768px) {
+        gap: 16px;
+      }
+
+      h5 {
+        font-size: 1.8rem;
+        color: $coffee-primary-500;
+        font-weight: 600;
+      }
+
+      &-info {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        align-items: center;
+
+        @media (min-width: 768px) {
+          gap: 16px;
+        }
+
+        &-status {
+          display: flex;
+          flex-direction: row;
+          gap: 16px;
+          @media (min-width: 768px) {
+          }
+
+          .status-success {
+            padding: 4px 8px;
+            font-size: 1.4rem;
+            color: $coffee-primary-100;
+            background-color: $coffee-primary-400;
+          }
+
+          .status-failed {
+            padding: 4px 8px;
+            font-size: 1.4rem;
+            color: $coffee-primary-000;
+            background-color: $coffee-primary-700;
+          }
+        }
+      }
+
+      &-title {
+        color: $coffee-primary-600;
+        font-size: 1.6rem;
+        font-weight: 600;
+      }
+
+      &-number {
+        color: $coffee-primary-600;
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  // 收貨資訊
+  .bottom-style {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+    }
+
+    .check-receiver {
+      border: 1px solid $coffee-primary-100;
+      background-color: $coffee-grey-000;
+      padding: 24px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      @media (min-width: 768px) {
+        padding: 80px;
+      }
+
+      .text-style {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        @media (min-width: 768px) {
+          gap: 16px;
+        }
+      }
+
+      &-content {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        font-size: 1.6rem;
+
+        &-title {
+          color: $coffee-primary-900;
+          margin: 0;
+          min-width: 65px;
+        }
+
+        &-text {
+          color: $coffee-primary-700;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  // 小計 & 結帳
+  .cart-total {
+    border: 1px solid $coffee-primary-100;
+    background-color: $coffee-grey-000;
+    padding: 24px;
+
+    @media (min-width: 768px) {
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 370px;
+    }
+  }
+
+  .cart-total-custom {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @media (min-width: 768px) {
+      gap: 16px;
+    }
+
+    .price-detail {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+
+      .product-title,
+      .account-title {
+        color: $coffee-primary-700;
+      }
+
+      .total-title,
+      .total-price {
+        font-size: 2rem;
+        font-weight: 700;
+        color: $coffee-primary-700;
+      }
+
+      .price-box {
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+        color: $coffee-primary-800;
+      }
+    }
+
+    .total-check {
+      display: flex;
+      justify-content: space-between;
+      gap: 28px;
+
+      &-continue,
+      &-proceed {
+        flex: 1;
+      }
+
+      &-continue {
+        border: 1px solid $coffee-primary-400;
+        background-color: $coffee-grey-000;
+        color: $coffee-primary-600;
+        padding: 8px 16px;
+
+        &:hover {
+          background-color: $coffee-primary-300;
+          color: $coffee-primary-700;
+        }
+        &:active {
+          background-color: $coffee-primary-800;
+          color: $coffee-primary-000;
+        }
+      }
+
+      &-proceed {
+        background-color: $coffee-primary-700;
+        color: $coffee-grey-000;
+        padding: 8px 16px;
+
+        @media (min-width: 768px) {
+          min-width: 152px;
+        }
+
+        &:hover {
+          background-color: $coffee-primary-300;
+          color: $coffee-primary-700;
+        }
+        &:active {
+          background-color: $coffee-primary-800;
+          color: $coffee-primary-000;
+        }
+      }
+    }
+
+    .total-line {
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: $coffee-primary-500;
+    }
+  }
+  .check-title {
+    font-size: 2rem;
+    color: $coffee-primary-600;
+    font-weight: 600;
+  }
+
+  .table-body-scroll-container {
+    max-height: 550px;
+    overflow-y: auto;
+    border-top: none;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      max-height: 450px;
+    }
+  }
+  .total-check-proceed:disabled,
+  .total-check-proceed:disabled:hover,
+  .total-check-proceed:disabled:active {
+    background-color: #d2d2d2;
+    color: $coffee-grey-000;
+    cursor: not-allowed;
+  }
+}

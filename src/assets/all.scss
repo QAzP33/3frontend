@@ -1,0 +1,29 @@
+// 自定義變數.字型
+@import './styles/variables';
+@import './styles/fonts';
+
+// 引入 bootstrap
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+
+//base-settings和工具類別
+@import './base/common';
+@import './styles/font-classes';
+
+
+//layouts(放全站共用 css 樣式:版型、固定位置、背景色等）
+@import './styles/layouts/header';
+@import './styles/layouts/footer';
+@import './styles/layouts/icon.scss';
+
+//小元件(button、card等) css 樣式
+@import './styles/auth.scss';
+@import './styles/member-sidebar.scss';
+@import './styles/membership-style.scss';
+@import './styles/member-style.scss';
+@import './styles/modal-custom.scss';
+@import './styles/products-style.scss';
+@import './styles/cart-style.scss';
+@import './styles/checkout-style.scss';
+@import './styles/create-order-style.scss';
+@import './styles/components/toast-style.scss';

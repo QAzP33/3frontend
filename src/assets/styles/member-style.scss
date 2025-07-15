@@ -1,0 +1,706 @@
+.sidebar-container-custom {
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  @media (min-width: 768px) {
+    gap: 32px;
+  }
+  @media (min-width: 768px) and (max-width: 990px) {
+    padding: 40px 0 0 0;
+  }
+
+  .content-title {
+    font-size: 2.4rem;
+    color: $coffee-primary-600;
+    font-weight: 600;
+  }
+
+  .form-custom {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-label-custom {
+    font-size: 1.6rem;
+    margin: 0;
+  }
+
+  .form-control-custom {
+    font-size: 1.6rem;
+    color: $coffee-primary-700;
+    opacity: 100%;
+    border: 1px solid $coffee-primary-100;
+    padding: 8px 12px;
+  }
+  .is-invalid {
+    border: 1px solid $coffee-notification;
+  }
+
+  .form-input-custom {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .btn-style {
+    font-size: 1.6rem;
+    padding: 8px 16px;
+    color: $coffee-primary-000;
+    background-color: $coffee-primary-700;
+
+    @media (min-width: 768px) {
+      padding: 16px 24px;
+    }
+
+    &:hover {
+      background-color: $coffee-primary-300;
+      color: $coffee-primary-700;
+    }
+
+    &:active {
+      background-color: $coffee-primary-800;
+      color: $coffee-primary-000;
+    }
+  }
+
+  .btn-cta-text {
+    font-size: 1.4rem;
+    color: $coffee-grey-600;
+  }
+
+  // 訂單資訊
+  .orders-custom {
+    @media (min-width: 768px) {
+      border: 1px solid $coffee-primary-100;
+    }
+    // 手機版
+    .orders-custom-mobile {
+      @media (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .order-card {
+        width: 100%;
+        background-color: $coffee-grey-000;
+        border: 1px solid $coffee-primary-100;
+        padding: 16px;
+        font-size: 1.6rem;
+        line-height: 1.5;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .date-num {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          &-style {
+            color: $coffee-primary-600;
+          }
+        }
+
+        &-link {
+          display: block;
+          text-decoration: none;
+          color: inherit;
+        }
+
+        .text-group {
+          display: flex;
+          flex-direction: row;
+          gap: 8px;
+          &-title {
+            color: $coffee-primary-1000;
+            width: 65px;
+          }
+
+          &-text {
+            color: $coffee-primary-600;
+            font-weight: 700;
+            flex: 1;
+          }
+        }
+      }
+    }
+
+    // 桌電版
+    &-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1.6rem;
+    }
+
+    &-style {
+      &-th {
+        padding: 24px 16px;
+        color: $coffee-primary-1000;
+        font-weight: 700;
+        text-align: left;
+        border-bottom: 1px solid $coffee-primary-100;
+        background-color: #f7f7f7;
+        vertical-align: middle;
+        @media (max-width: 1200px) {
+          padding: 8px;
+          font-size: 1.4rem;
+        }
+      }
+    }
+
+    &-tbody {
+      background-color: $coffee-grey-000;
+
+      &-th,
+      &-td {
+        padding: 24px 16px;
+        color: $coffee-primary-700;
+        border-bottom: 1px solid $coffee-primary-100;
+        font-weight: inherit;
+        vertical-align: middle;
+        height: 100%;
+        font-size: 1.6rem;
+
+        @media (max-width: 1200px) {
+          padding: 24px 8px;
+        }
+        @media (min-width: 768px) and (max-width: 1000px) {
+          font-size: 1.4rem;
+        }
+
+        &-unpaid,
+        &-unshipped {
+          padding: 16px;
+          color: $coffee-notification;
+          border-bottom: 1px solid $coffee-primary-100;
+          font-weight: inherit;
+          vertical-align: middle;
+          height: 100%;
+          @media (max-width: 1200px) {
+            padding: 8px;
+          }
+          @media (min-width: 768px) and (max-width: 1000px) {
+            font-size: 1.4rem;
+          }
+        }
+
+        .check-order {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          max-width: 330px;
+          min-width: 0;
+          height: 100%;
+          line-height: 1.5;
+          overflow: hidden;
+          @media (min-width: 768px) and (max-width: 990px) {
+            max-width: 180px;
+          }
+
+          &-text {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-shrink: 1;
+            min-width: 0;
+          }
+
+          &-btn {
+            display: flex;
+            justify-content: center;
+            &-view {
+              font-size: 1.4rem;
+              color: $coffee-primary-000;
+              background-color: $coffee-primary-700;
+              padding: 4px 8px;
+              line-height: 1.2;
+              white-space: nowrap;
+              text-decoration: none;
+              line-height: 150%;
+              @media (max-width: 990px) {
+                font-size: 1.2rem;
+              }
+
+              &:hover {
+                background-color: $coffee-primary-300;
+                color: $coffee-primary-700;
+              }
+
+              &:active {
+                background-color: $coffee-primary-800;
+                color: $coffee-primary-000;
+              }
+            }
+
+            &-reorder {
+              font-size: 1.4rem;
+              color: $coffee-primary-500;
+              background-color: $coffee-primary-100;
+              padding: 4px 8px;
+              line-height: 150%;
+              @media (max-width: 990px) {
+                font-size: 1.2rem;
+              }
+
+              &:hover {
+                background-color: $coffee-primary-000;
+                color: $coffee-primary-600;
+              }
+
+              &:active {
+                color: $coffee-primary-000;
+              }
+            }
+
+            &-checkout {
+              font-size: 1.4rem;
+              color: $coffee-primary-100;
+              background-color: $coffee-primary-500;
+              padding: 4px 8px;
+              line-height: 150%;
+              @media (max-width: 990px) {
+                font-size: 1.2rem;
+              }
+
+              &:hover {
+                background-color: $coffee-primary-100;
+                color: $coffee-primary-700;
+              }
+
+              &:active {
+                background-color: $coffee-primary-800;
+                color: $coffee-primary-000;
+              }
+            }
+          }
+        }
+      }
+
+      tr:last-child th,
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      .price-box {
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+      }
+    }
+
+    .table-order-text {
+      font-size: 1.6rem;
+
+      @media (min-width: 768px) and (max-width: 1200px) {
+        font-size: 1.4rem;
+      }
+    }
+
+    .check-order-btn {
+      display: flex;
+      align-items: center;
+      min-width: 80px;
+
+      &-reorder {
+        padding: 4px 8px;
+        font-size: 1.4rem;
+        color: $coffee-primary-000;
+        background-color: $coffee-primary-500;
+        text-decoration: none;
+        @media (max-width: 990px) {
+          font-size: 1.2rem;
+        }
+
+        &:hover {
+          color: $coffee-primary-400;
+          background-color: $coffee-primary-200;
+        }
+        &:active {
+          color: $coffee-primary-300;
+          background-color: $coffee-primary-700;
+        }
+      }
+
+      &-checkout {
+        padding: 4px 8px;
+        font-size: 1.4rem;
+        color: $coffee-secondary-000;
+        background-color: $coffee-secondary-700;
+        text-decoration: none;
+        @media (max-width: 990px) {
+          font-size: 1.2rem;
+        }
+
+        &:hover {
+          color: $coffee-secondary-100;
+          background-color: $coffee-secondary-400;
+        }
+        &:active {
+          color: $coffee-secondary-200;
+          background-color: $coffee-secondary-800;
+        }
+      }
+    }
+
+    .no-orders {
+      background-color: $coffee-grey-000;
+      width: 100%;
+      align-items: center;
+      padding: 40px;
+      text-align: center;
+      color: $coffee-grey-600;
+
+      &-text {
+        color: $coffee-grey-600;
+      }
+    }
+  }
+
+  // 單一訂單資訊
+  .order-summary-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @media (min-width: 768px) {
+      gap: 16px;
+    }
+
+    h5 {
+      font-size: 1.8rem;
+      color: $coffee-primary-500;
+      font-weight: 600;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      align-items: center;
+
+      @media (min-width: 768px) {
+        gap: 16px;
+      }
+
+      &-status {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        @media (min-width: 768px) {
+        }
+
+        .status-success {
+          padding: 4px 8px;
+          font-size: 1.4rem;
+          color: $coffee-primary-100;
+          background-color: $coffee-primary-400;
+        }
+
+        .status-failed {
+          padding: 4px 8px;
+          font-size: 1.4rem;
+          color: $coffee-primary-000;
+          background-color: $coffee-primary-700;
+        }
+      }
+
+      &-checkout {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+
+        .check-order-btn-reorder,
+        .check-order-btn-checkout {
+          padding: 4px 8px;
+          font-size: 1.4rem;
+          color: $coffee-secondary-000;
+          background-color: $coffee-secondary-700;
+          text-decoration: none;
+        }
+      }
+    }
+
+    &-title {
+      color: $coffee-primary-600;
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    &-number {
+      color: $coffee-primary-600;
+      font-size: 1.6rem;
+    }
+  }
+
+  .orders-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    @media(max-width: 990px) {
+      gap: 12px;
+    }
+
+    &-title {
+      font-size: 2rem;
+      color: $coffee-primary-500;
+      font-weight: 700;
+    }
+
+    &-receiver {
+      flex: 1;
+      height: auto;
+      line-height: 1.5;
+      white-space: normal;
+      box-sizing: border-box;
+      gap: 8px;
+      padding: 32px 80px;
+      background-color: $coffee-grey-000;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      justify-content: center;
+      border: 1px solid $coffee-primary-200;
+      @media(max-width: 990px) {
+        padding: 24px;
+      }
+
+      &-content {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        @media(max-width: 990px) {
+          gap: 0;
+        }
+
+        .receiver-title {
+          width: 80px;
+          font-weight: 700;
+          color: $coffee-primary-800;
+          font-size: 1.6rem;
+          white-space: nowrap;
+          flex-shrink: 0;
+          margin: 0;
+          @media(max-width: 990px) {
+            font-size: 1.4rem;
+          }
+        }
+
+        .receiver-text {
+          color: $coffee-primary-800;
+          font-size: 1.6rem;
+          word-break: break-word;
+          flex: 1;
+          min-width: 0;
+          margin: 0;
+          @media(max-width: 990px) {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+
+    &-total {
+      flex: 1;
+      max-width: 100%;
+      height: auto;
+      line-height: 1.5;
+      white-space: normal;
+      box-sizing: border-box;
+      gap: 8px;
+      padding: 32px 80px;
+      background-color: $coffee-grey-000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $coffee-primary-200;
+      @media(max-width: 990px) {
+        padding: 24px 32px;
+      }
+
+      &-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 8px;
+
+        .total-title {
+          font-weight: 700;
+          color: $coffee-primary-700;
+          font-size: 1.6rem;
+          white-space: nowrap;
+          flex-shrink: 0;
+          text-align: left;
+          flex: 1;
+          margin: 0;
+          @media(max-width: 990px) {
+            font-size: 1.4rem;
+          }
+        }
+
+        .total-text {
+          color: $coffee-secondary-700;
+          font-size: 1.6rem;
+          word-break: break-word;
+          min-width: 0;
+          justify-content: flex-end;
+          align-items: center;
+          text-align: right;
+          flex: 1;
+          margin: 0;
+          @media(max-width: 990px) {
+            font-size: 1.4rem;
+          }
+        }
+      }
+
+      .price-box {
+        display: flex;
+        flex-direction: row;
+        min-width: 90px;
+        justify-content: space-between;
+        gap: 4px;
+        color: $coffee-primary-800;
+      }
+
+      .price-box-discount {
+        display: flex;
+        flex-direction: row;
+        min-width: 90px;
+        justify-content: space-between;
+        gap: 4px;
+        color: $coffee-secondary-700;
+      }
+
+      &-amount {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        .amount-title {
+          width: 80px;
+          font-weight: 900;
+          color: $coffee-primary-800;
+          font-size: 1.6rem;
+          white-space: nowrap;
+          flex-shrink: 0;
+          flex: 1;
+          max-width: 100px;
+          margin: 0;
+        }
+
+        .amount-text {
+          color: $coffee-secondary-800;
+          font-size: 2rem;
+          word-break: break-word;
+          flex: 1;
+          min-width: 0;
+          margin: 0;
+          @media(max-width: 990px) {
+            font-size: 1.8rem;
+          }
+        }
+
+        .price-box {
+          display: flex;
+          flex-direction: row;
+          gap: 4px;
+          color: $coffee-primary-800;
+          justify-content: flex-end;
+          align-items: center;
+          flex: 1;
+          text-align: right;
+          max-width: 200px;
+
+          .amount-currency {
+            font-size: 1.6rem;
+            font-weight: 700;
+            @media(max-width: 990px) {
+              font-size: 1.4rem;
+            }
+          }
+
+          .amount-price {
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 0;
+            @media(max-width: 990px) {
+              font-size: 2.4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 頁碼
+  .pagination-custom {
+    justify-content: center;
+    &-link {
+      font-size: 1.6rem;
+      color: $coffee-primary-600;
+      background-color: $coffee-bg-light;
+      border: 0;
+      border-radius: 0;
+      &:hover {
+        background-color: $coffee-primary-300;
+        color: $coffee-primary-700;
+      }
+      &:active {
+        background-color: $coffee-primary-800;
+        color: $coffee-primary-000;
+      }
+    }
+  }
+
+  .back-btn {
+    display: flex;
+    justify-content: end;
+    gap: 16px;
+
+    &-custom {
+      font-size: 1.6rem;
+      color: $coffee-primary-000;
+      background-color: $coffee-primary-700;
+      padding: 8px 16px;
+      border: 0;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $coffee-primary-300;
+        color: $coffee-primary-700;
+      }
+
+      &:active {
+        background-color: $coffee-primary-800;
+        color: $coffee-primary-000;
+      }
+
+      &-checkout {
+        background-color: $coffee-secondary-700;
+
+        &:hover {
+          background-color: $coffee-secondary-300;
+          color: $coffee-secondary-800;
+        }
+
+        &:active {
+          background-color: $coffee-secondary-800;
+          color: $coffee-secondary-100;
+        }
+      }
+    }
+  }
+}

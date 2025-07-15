@@ -1,0 +1,48 @@
+.banner img {
+    transform: scaleX(-1);
+    height: 816px;
+    object-fit: cover;
+    width: 100%;
+    @media (max-width: 991.98px) {
+      height: 740px;
+    }
+
+  }
+
+  .banner-text {
+    position: absolute;
+    top: 33%;
+    left: 7%;
+    color: white;
+    // text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    text-align: center;
+  }
+  
+  .homeTitle h1{
+    font-size: 64px; // 根據螢幕寬度調整字體大小
+    font-weight: bold;
+    margin: 0;
+
+    @media (max-width: 1200px) {
+      font-size: 40px;
+    }
+
+    @media (max-width: 991.98px) {
+      font-size: 30px;
+    }
+  }
+  
+  .homeTitle p {
+    font-size: 30px;
+    margin-top: 0.5rem;
+
+    @media (max-width: 1200px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 991.98px) {
+      font-size: 18px;
+    }
+  }
+  
+  

@@ -1,0 +1,82 @@
+.auth-bg {
+  background-image: url('https://images.unsplash.com/photo-1656699219602-89b6cc6c68d4?q=80&w=2130&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+
+  .auth-custom {
+    padding: 40px 24px 24px 24px;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 533px;
+  }
+
+  .auth-title {
+    font-size: 2rem;
+    color: $coffee-primary-600;
+  }
+
+  .logo-custom {
+    width: 204px;
+    height: auto;
+  }
+
+  .form-custom {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-label-custom {
+    font-size: 1.6rem;
+  }
+
+  .form-control-custom {
+    font-size: 1.6rem;
+    color: $coffee-primary-700;
+    opacity: 100%;
+    border: 1px solid $coffee-primary-400;
+    padding: 8px 12px;
+  }
+
+  .form-input-custom {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .link-custom {
+    font-size: 1.4rem;
+    color: #2073f0;
+  }
+
+  .btn-style {
+    font-size: 1.6rem;
+    padding: 8px 16px;
+
+    @media (min-width: 768px) {
+      padding: 16px 24px;
+    }
+
+    &-light {
+      background-color: $coffee-grey-000;
+    }
+
+    &:hover {
+      background-color: $coffee-primary-300;
+      color: $coffee-primary-700;
+    }
+
+    &:active {
+      background-color: $coffee-primary-800;
+      color: $coffee-primary-000;
+    }
+  }
+
+  .btn-cta-text {
+    font-size: 1.4rem;
+    color: $coffee-grey-600;
+  }
+}

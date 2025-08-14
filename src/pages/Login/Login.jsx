@@ -7,6 +7,7 @@ import axios from 'axios';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { images } from '../../constants/image';
+import { useGoogleAuth } from '../../hooks/useGoogleAuth';
 
 const Login = () => {
   const [account, setAccount] = useState('');
@@ -83,7 +84,7 @@ const Login = () => {
         localStorage.setItem('role', role);
         localStorage.setItem('username', name);
 
-        console.log(res)
+        console.log(res);
 
         dispatch(setCredentials({ token, role, username: name }));
 
@@ -97,6 +98,14 @@ const Login = () => {
         clearInputs();
       });
   };
+
+  // Google 登入
+  const handleGoogleLogin = useGoogleAuth({
+    apiUrl,
+    setModalMsg,
+    setIsOpen,
+    failureMsg: 'Google 登入失敗',
+  });
 
   return (
     <>
@@ -172,6 +181,7 @@ const Login = () => {
           <button
             type="button"
             className="btn btn-outline-coffee-primary-400 text-coffee-primary-600 btn-style btn-style-light w-100 rounded-0"
+            onClick={handleGoogleLogin}
           >
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"

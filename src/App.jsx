@@ -20,7 +20,6 @@ import OrderDetail from './pages/OrderDetail/OrderDetail';
 import CartList from './pages/CartList/CartList';
 import PaySuccess from './pages/Payment/PaySuccess';
 import PayError from './pages/Payment/PayError';
-import PaymentCallback from './pages/Payment/PaymentCallback';
 import Checkout from './pages/Checkout/Checkout';
 import CreateOrder from './pages/CreateOrder/CreateOrder';
 
@@ -48,7 +47,6 @@ const App = () => {
         <Route path="/create-order" element={<CreateOrder />} />
         <Route path="/payment/success" element={<PaySuccess />} />
         <Route path="/payment/error" element={<PayError />} />
-        <Route path="/payment/callback" element={<PaymentCallback />} />
         <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </>

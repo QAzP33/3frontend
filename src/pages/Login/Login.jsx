@@ -83,7 +83,7 @@ const Login = () => {
         localStorage.setItem('role', role);
         localStorage.setItem('username', name);
 
-        console.log(res)
+        // console.log(res)
 
         dispatch(setCredentials({ token, role, username: name }));
 

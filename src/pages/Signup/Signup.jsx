@@ -6,6 +6,7 @@ import axios from 'axios';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import { images } from '../../constants/image';
+import useGoogleAuth  from '../../hooks/useGoogleAuth';
 
 const Signup = () => {
   const [account, setAccount] = useState('');
@@ -92,6 +93,14 @@ const Signup = () => {
         console.log(err);
       });
   };
+
+  // Google 註冊
+  const handleGoogleSignup = useGoogleAuth({
+    apiUrl,
+    setModalMsg,
+    setIsOpen,
+    failureMsg: 'Google 註冊失敗',
+  });
 
   return (
     <>
@@ -185,6 +194,7 @@ const Signup = () => {
           <button
             type="button"
             className="btn btn-outline-coffee-primary-400 text-coffee-primary-600 btn-style btn-style-light w-100 rounded-0"
+            onClick={handleGoogleSignup}
           >
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"

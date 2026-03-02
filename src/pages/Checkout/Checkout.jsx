@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
@@ -25,28 +25,28 @@ const Checkout = () => {
   const [paymentMethod, setPaymentMethod] = useState('cod');
   const [formValidated, setFormValidated] = useState(false);
 
-  const cardRefs = [useRef(), useRef(), useRef(), useRef()];
-  const ccvRef = useRef();
+  // const cardRefs = [useRef(), useRef(), useRef(), useRef()];
+  // const ccvRef = useRef();
 
   // const [agreeCOD, _] = useState(false);
   const [agreeChecked, setAgreeChecked] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
-  const [modalMsg, setModalMsg] = useState('');
+  // const [modalMsg, setModalMsg] = useState('');
 
-  const handleCardInput = (e, idx) => {
-    const value = e.target.value;
-    if (value.length === 4 && idx < cardRefs.length - 1) {
-      cardRefs[idx + 1].current?.focus();
-    }
-  };
+  // const handleCardInput = (e, idx) => {
+  //   const value = e.target.value;
+  //   if (value.length === 4 && idx < cardRefs.length - 1) {
+  //     cardRefs[idx + 1].current?.focus();
+  //   }
+  // };
 
-  const months = Array.from({ length: 12 }, (_, i) =>
-    String(i + 1).padStart(2, '0'),
-  );
-  const years = Array.from({ length: 10 }, (_, i) =>
-    String(new Date().getFullYear() + i),
-  );
+  // const months = Array.from({ length: 12 }, (_, i) =>
+  //   String(i + 1).padStart(2, '0'),
+  // );
+  // const years = Array.from({ length: 10 }, (_, i) =>
+  //   String(new Date().getFullYear() + i),
+  // );
 
   // 取得訂單資訊
   useEffect(() => {
@@ -85,13 +85,15 @@ const Checkout = () => {
   // 修改付款方式選擇的處理
   const handlePaymentMethodChange = (method) => {
     
-    if (method === 'credit') {
-      setModalMsg('目前金流維護中，請選擇貨到付款，謝謝');
-      setIsOpen(true);
-      setPaymentMethod('cod');
-    } else {
-      setPaymentMethod(method);
-    }
+    // if (method === 'credit') {
+    //   setModalMsg('目前金流維護中，請選擇貨到付款，謝謝');
+    //   setIsOpen(true);
+    //   setPaymentMethod('cod');
+    // } else {
+    //   setPaymentMethod(method);
+    // }
+
+    setPaymentMethod(method);
     setFieldErr((prev) => ({
       ...prev,
       paymentMethod: '',
@@ -280,62 +282,6 @@ const Checkout = () => {
                     </div>
                   </div>
 
-                  {paymentMethod === 'credit' && (
-                    <>
-                      <div className="box-content ">
-                        <p className="box-content-title">信用卡號</p>
-                        <div className="box-content-card-input">
-                          {cardRefs.map((ref, idx) => (
-                            <div key={idx}>
-                              <input
-                                key={idx}
-                                type="text"
-                                maxLength="4"
-                                className="box-content-card-input-detail"
-                                ref={ref}
-                                onChange={(e) => handleCardInput(e, idx)}
-                              />
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="box-content">
-                        <p className="box-content-title">有效年月</p>
-                        <div className="box-content-card-input year-custom">
-                          <select className="box-content-card-input-detail card-expiration">
-                            {months.map((month) => (
-                              <option key={month} value={month}>
-                                {month}
-                              </option>
-                            ))}
-                          </select>
-                          <span>/</span>
-
-                          <select className="box-content-card-input-detail card-expiration">
-                            {years.map((year) => (
-                              <option key={year} value={year}>
-                                {year}
-                              </option>
-                            ))}
-                          </select>
-                        </div>
-                      </div>
-
-                      <div className="box-content">
-                        <p className="box-content-title">背面末三碼</p>
-                        <div className="box-content-card-input">
-                          <input
-                            type="text"
-                            maxLength="3"
-                            className="box-content-card-input-detail card-ccv-input"
-                            ref={ccvRef}
-                          />
-                        </div>
-                      </div>
-                    </>
-                  )}
-
                   {/* 同意條款 */}
                   {paymentMethod === 'cod' && (
                     <div className="check-content">
@@ -369,9 +315,9 @@ const Checkout = () => {
                     <div className="check-content">
                       <div className="check-content-option">
                         <input
-                          type="radio"
+                          type="checkbox"
                           id="agree-confirmOrder"
-                          className="radio-style"
+                          className="checkbox-style"
                           checked={agreeCredit.confirmOrder}
                           onClick={() => {
                             setAgreeCredit((prev) => ({
@@ -395,9 +341,9 @@ const Checkout = () => {
 
                       <div className="check-content-option">
                         <input
-                          type="radio"
+                          type="checkbox"
                           id="agree-terms"
-                          className="radio-style"
+                          className="checkbox-style"
                           checked={agreeCredit.agreeTerms}
                           onClick={() => {
                             setAgreeCredit((prev) => ({
@@ -419,19 +365,6 @@ const Checkout = () => {
                         </label>
                       </div>
 
-                      <div className="check-content-option">
-                        <input
-                          type="checkbox"
-                          id="remember-card"
-                          className="checkbox-style"
-                        />
-                        <label
-                          htmlFor="remember-card"
-                          className="check-content-text"
-                        >
-                          記住這張信用卡，下次結帳更快速
-                        </label>
-                      </div>
                     </div>
                   )}
 
@@ -480,7 +413,6 @@ const Checkout = () => {
                   ✕
                 </button>
               </div>
-              <div className="modal-body custom-modal-body">{modalMsg}</div>
               <div className="modal-footer custom-modal-footer">
                 <button
                   type="button"

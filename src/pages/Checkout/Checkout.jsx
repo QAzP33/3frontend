@@ -135,21 +135,49 @@ const Checkout = () => {
       const apiUrl = import.meta.env.VITE_API_URL;
       const token = localStorage.getItem('token');
       
-      const response = await axios.put(
-        `${apiUrl}/api/v1/users/checkout`,
-        {
-          display_id: orderInfo?.order?.display_id,
-          payment_method_id: paymentMethod === 'cod' ? 1 : 2, // 1 為貨到付款，2 為信用卡
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
+      if (paymentMethod === 'credit') {
+        // 信用卡付款：執行 newebpay API
+        const response = await axios.post(
+          `${apiUrl}/api/v1/users/newebpay?order_id=${order_id}`,
+          {
+            display_id: orderInfo?.order?.display_id,
           },
-        }
-      );
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
 
-      if (response.status === 200) {
-        navigate('/payment/success');
+        if (response.status === 200) {
+          // 處理 newebpay 回應，後端回傳 HTML 表單會自動提交到藍新金流
+          console.log('NeWebPay response received');
+          
+          // 創建一個新的 window 來處理表單提交
+          const newWindow = window.open('', '_self');
+          newWindow.document.write(response.data);
+          newWindow.document.close();
+          
+          // HTML 中的 script 會自動提交表單到藍新金流
+        }
+      } else {
+        // 貨到付款：執行原本的 checkout API
+        const response = await axios.put(
+          `${apiUrl}/api/v1/users/checkout`,
+          {
+            display_id: orderInfo?.order?.display_id,
+            payment_method_id: 1, // 1 為貨到付款
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+          },
+          }
+        );
+
+        if (response.status === 200) {
+          navigate('/payment/success');
+        }
       }
     } catch (error) {
       console.error('結帳失敗:', error);
@@ -287,9 +315,9 @@ const Checkout = () => {
                     <div className="check-content">
                       <div className="check-content-option">
                         <input
-                          type="radio"
+                          type="checkbox"
                           id="agree-cod"
-                          className="radio-style"
+                          className="checkbox-style"
                           checked={agreeChecked}
                           onClick={() => {
                             setAgreeChecked((prev) => !prev);
